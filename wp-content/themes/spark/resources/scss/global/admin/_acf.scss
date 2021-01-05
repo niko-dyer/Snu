@@ -1,0 +1,74 @@
+//
+// ACF Styles
+//
+
+// Responsive Field Layouts
+#wpbody {
+  .acf-fields {
+    .acf-field {
+      @media screen and (max-width: 1260px) { width: 100% !important }
+
+      // Repeater
+      @at-root #wpcontent #wpbody .wrap & {
+        .acf-repeater {
+          .acf-button.disabled {
+            border-color: #ccc !important;
+            background: #ccc !important;
+            color: #888 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .acf-switch.-on {
+    background: lighten($lime, 10%);
+  }
+  .acf-switch span { text-shadow: none }
+
+  .acf-button-group label.selected {
+    background: $accent;
+  }
+
+  #poststuff .acf-field-object.open > .handle {
+    background: $clear;
+    border: solid 1px $vapor;
+    text-shadow: none;
+  }
+}
+
+
+// FLEXIBLE CONTENT MODAL
+body .acf-fc-popup {
+  > ul {
+    background: $smoke;
+    align-content: flex-start;
+
+    li {
+      a {
+        box-shadow: none !important;
+        background: $smoke !important;
+
+        .acf-fc-popup-label {
+          padding: 12px;
+          background: $header-background !important;
+          border: none;
+          border-bottom: solid 1px $white;
+          box-shadow: none;
+          text-shadow: none;
+          text-transform: uppercase;
+          font: {
+            size: 17px;
+            weight: 700;
+          }
+
+          @media screen and (max-width: 768px) { font-size: 12px }
+        }
+
+        .acf-fc-popup-image { background-repeat: no-repeat !important }
+
+        &:hover { box-shadow: 0 0 4px rgba(0,0,0,0.5) !important }
+      }
+    }
+  }
+}

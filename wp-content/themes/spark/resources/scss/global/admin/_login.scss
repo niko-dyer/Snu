@@ -1,0 +1,230 @@
+//
+// Variables
+//
+
+$login-background: $ghost;
+
+$form-background: $white;
+$form-container-width: 640px;
+$form-border: solid 1px $vapor;
+$form-box-shadow: none;
+$form-label-color: $smoke;
+$form-input-color: $oil;
+$form-input-background: $ghost;
+$form-input-background-focus: $login-background;
+$form-visibility-icon: $smoke;
+$form-submit-color: $white;
+$form-submit-background: $primary;
+
+// $logo is located in themes/spark/public/img/
+$logo: url('../img/default-login-logo.png');
+$logo-container-height: 240px;
+$logo-background-color: $form-background;
+$logo-background-size: 85% auto;
+
+
+//
+// Login Page
+//
+
+body.login {
+  background: $login-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+
+  @media (max-width: 640px) {
+    background: $form-background;
+  }
+
+  * { outline: none }
+
+  #login_error,
+  .message {
+    margin: 0;
+    padding: 20px 60px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+
+    @media (max-width: 640px) {
+      padding: 20px;
+      font-size: 14px !important;
+    }
+  }
+
+  #login_error {
+    margin: 0;
+    background: $error;
+    text-align: center;
+    color: $white;
+    font-size: 16px;
+    border: none;
+  }
+
+  .message {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    background: $info;
+    color: $white;
+    border: none;
+  }
+
+  #login {
+    background: $form-background;
+    width: $form-container-width;
+    padding: 24px;
+    border: $form-border;
+    box-shadow: $form-box-shadow;
+    margin: 0 20px;
+
+    @media (max-width: 640px) {
+      padding: 0;
+      border: none;
+      margin: 0;
+    }
+
+    // Logo
+    h1 {
+      height: $logo-container-height;
+      width: 100%;
+      background: {
+        image: $logo;
+        color: $logo-background-color;
+        position: center;
+        repeat: no-repeat;
+        size: $logo-background-size;
+      }
+
+      @media (max-width: 480px) {
+        height: calc(#{$logo-container-height} / 1.25);
+      }
+
+      a { display: none }
+    }
+
+    #loginform,
+    #lostpasswordform {
+      background: $form-background;
+      margin-top: 0;
+      box-shadow: none;
+      border: none;
+
+      label {
+        color: $form-label-color;
+        font-size: 14px;
+      }
+
+      input#user_login,
+      input#user_pass {
+        background: $form-input-background;
+        color: $form-input-color;
+        box-shadow: none;
+        border: none;
+        border-bottom: solid 2px $primary;
+        border-radius: 0;
+      }
+
+      input[type=checkbox] {
+        background: $form-input-background;
+        border: $form-border;
+        border-radius: 0;
+        box-shadow: none;
+        height: 20px;
+        width: 20px;
+
+        &:checked {
+          background: $primary;
+          border-color: $primary;
+
+          &::before {
+            content: '\f147';
+            height: 100%;
+            width: 100%;
+            margin: 1px 0 0 -1px;
+            float: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            font: {
+              size: 26px;
+              family: dashicons;
+            }
+          }
+        }
+      }
+
+      .wp-hide-pw,
+      .wp-show-pw {
+        border: none;
+        box-shadow: none;
+
+        .dashicons { color: $form-visibility-icon }
+      }
+
+      input#wp-submit {
+        background: $form-submit-background;
+        color: $form-submit-color;
+        box-shadow: none;
+        text-decoration: none;
+        text-shadow: none;
+        border: none;
+        text-transform: uppercase;
+        height: 38px;
+        min-width: 140px;
+        padding-top: 2px;
+        transition: 0.2s;
+        font: {
+          size: 15px;
+          weight: bold;
+        }
+
+        @media (max-width: 640px) {
+          margin-top: 18px;
+          width: 100%;
+        }
+
+        &:hover { background: lighten($form-submit-background, 4%) }
+        &:active, &:focus { background: darken($form-submit-background, 4%) }
+      }
+    }
+
+    #nav,
+    #backtoblog {
+      float: left;
+
+      a {
+        color: $secondary;
+        box-shadow: none !important;
+        transition: 0.2s;
+
+        &:hover {
+          color: lighten($secondary, 10%);
+        }
+      }
+
+      @media (max-width: 480px) {
+        float: none !important;
+        text-align: center !important;
+      }
+    }
+
+    #nav {
+      margin: 16px 0 0;
+      float: right;
+    }
+  }
+}
+
+// Session expired popup
+#wp-auth-check-wrap #wp-auth-check {
+  background: $primary;
+
+  .wp-auth-check-close {
+    &, &:hover { color: $secondary }
+  }
+}

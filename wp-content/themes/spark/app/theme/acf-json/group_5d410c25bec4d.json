@@ -1,0 +1,211 @@
+{
+    "key": "group_5d410c25bec4d",
+    "title": "Component - Slideshow",
+    "fields": [
+        {
+            "key": "field_5d4120343b08c",
+            "label": "Animation",
+            "name": "animation",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "slide": "Slide",
+                "fade": "Fade",
+                "scale": "Scale",
+                "push": "Push",
+                "pull": "Pull"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5d4122e7fa5c0",
+            "label": "Navigation",
+            "name": "navigation",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "arrows": "Arrows",
+                "dots": "Dots",
+                "both": "Both",
+                "none": "None"
+            },
+            "allow_null": 0,
+            "default_value": "both",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5d4122aefa5bf",
+            "label": "Ken Burns Effect",
+            "name": "ken_burns_effect",
+            "type": "button_group",
+            "instructions": "Images subtly zoom in or out",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "in": "Zoom In",
+                "out": "Zoom Out"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5d412fa1a97c8",
+            "label": "Width",
+            "name": "width",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "full": "Full",
+                "container": "Container"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5d412178fa5be",
+            "label": "Aspect Ratio",
+            "name": "aspect_ratio",
+            "type": "text",
+            "instructions": "If blank, the default is 16:9",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d412142fa5bd",
+            "label": "Autoplay",
+            "name": "autoplay",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d413003a97c9",
+            "label": "Autoplay Speed",
+            "name": "autoplay_speed",
+            "type": "range",
+            "instructions": "Seconds between slides",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d412142fa5bd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5,
+            "min": 1,
+            "max": 10,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5d410c3b54df2",
+            "label": "Images",
+            "name": "images",
+            "type": "gallery",
+            "instructions": "Images will expand to fill the slider's aspect ratio. By default they will be centered horizontally and vertically.<br>\r\nTo align an image to the <strong>top<\/strong> or <strong>bottom<\/strong>, click an image and in the <strong>Description<\/strong> for that image, enter either <strong>top<\/strong> or <strong>bottom<\/strong>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "insert": "append",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1580332965
+}

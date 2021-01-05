@@ -1,0 +1,137 @@
+//
+// Desktop Nav
+//
+@import '../variables';
+
+// My CSS
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.uk-container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 5000px;
+}
+
+.uk-navbar-container {
+  background-color: $primary;
+}
+
+.uk-navbar-nav li a {
+  font-size: 15px;
+}
+
+.uk-navbar-nav li a:hover {
+  color: $secondary;
+}
+
+.uk-navbar-dropdown {
+  background-color: $primary;
+  top: 118px !important;
+  border-top: 1px solid $secondary;
+}
+
+.uk-logo {
+  max-width: 200px;
+}
+
+header#site-header {
+  background: black;
+}
+
+// Default CSS
+
+header#site-header {
+  background: $navbar-background;
+
+  > .uk-container {
+    padding: 0;
+  }
+}
+
+//
+// Mobile Nav
+//
+
+nav#offcanvas-nav {
+  ul.uk-nav-parent-icon {
+    > li.menu-item {
+      position: relative;
+
+      // Top level menu-item
+      > span {
+        padding: 3px 2.5rem 3px 0;
+        display: block;
+
+        a {
+          display: inline-block;
+          font-size: rem-calc(24);
+          color: $global-muted-color;
+          line-height: 1.2;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      // Top level menu-item that doesn't link, just has sub-items
+      a.no-link {
+        font-size: rem-calc(24);
+        color: $global-muted-color;
+        line-height: 1.2;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &::after {
+          margin-top: -5px;
+        }
+      }
+
+      .uk-nav-sub {
+        li {
+
+          // Sub-item link
+          span {
+            display: block;
+            margin: 1rem 0;
+
+            a {
+              display: inline-block;
+              color: $global-muted-color;
+
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+
+          // Unused in sub-nav
+          > a {
+            padding: 0;
+          }
+        }
+
+        // Nested sub-navs
+        .uk-nav-sub {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      // Chevron link for items with sub-navs
+      > a.indicator {
+        padding: 0 !important;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+

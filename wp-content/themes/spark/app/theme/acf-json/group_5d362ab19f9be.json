@@ -1,0 +1,69 @@
+{
+    "key": "group_5d362ab19f9be",
+    "title": "Component - Heading",
+    "fields": [
+        {
+            "key": "field_5d362ac1ffc88",
+            "label": "Heading Element",
+            "name": "heading_element",
+            "type": "button_group",
+            "instructions": "Changes the heading element in the code, styling stays the same.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "h1": "H1",
+                "h2": "H2",
+                "h3": "H3",
+                "h4": "H4",
+                "h5": "H5",
+                "h6": "H6"
+            },
+            "allow_null": 0,
+            "default_value": "h2",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5d362c13ffc89",
+            "label": "Heading Text",
+            "name": "heading_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "66",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1580333250
+}

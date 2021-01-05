@@ -1,0 +1,68 @@
+@import "../_variables.scss";
+
+footer.site-footer {
+  //
+  width: 100vw;
+  background-color: $primary;
+  height: 395px;
+  position: absolute;
+
+  .foot-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: inherit;
+  }
+
+  .foot-left {
+    width: 75%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .foot-logo {
+    width: 75%;
+    height: 80%;
+  }
+
+  .foot-right {
+    width: 75%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .page-h4 {
+    color: $secondary;
+    padding: 0;
+    margin: 0;
+  }
+
+  .page-list {
+    list-style: none;
+    margin-top: 5px;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .insta {
+    color: deeppink;
+    font-size: 16px;
+  }
+
+  .pics {
+    color: #5EE8BF;
+    font-size: 20px;
+  }
+
+  .shahzaibisapussy {
+    color: #0cff40;
+    font-size: 18px;
+  }
+}

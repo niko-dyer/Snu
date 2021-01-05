@@ -1,0 +1,36 @@
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.uk-container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 5000px;
+}
+
+.uk-navbar-container {
+  background-color: black;
+}
+
+.uk-navbar-nav li a {
+  font-size: 15px;
+}
+
+.uk-navbar-nav li a:hover {
+  color: #F06100;
+}
+
+.uk-navbar-dropdown {
+  background-color: black;
+  top: 100% !important;
+  border-top: 1px solid #F06100;
+}
+
+.uk-logo {
+  max-width: 200px;
+}
+
+header#site-header {
+  background: black;
+}

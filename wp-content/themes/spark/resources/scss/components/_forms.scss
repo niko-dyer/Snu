@@ -1,0 +1,108 @@
+// Gravity Forms / UIKit styling
+body {
+  .gform_wrapper {
+    .gform_body {
+      ul.gform_fields {
+        padding: 0;
+        list-style: none;
+
+        li.gfield {
+          ul {
+            padding: 0;
+            list-style: none;
+          }
+
+          &.hidden_label label { display: none }
+
+          .ginput_container {
+            input {
+              &[type=text],
+              &[type=email] { @extend .uk-input }
+              &[type=range] { @extend .uk-range }
+              &[type=radio] {
+                @extend .uk-radio;
+                & + label { margin-left: 6px }
+              }
+              &[type=checkbox] {
+                @extend .uk-checkbox;
+                & + label { margin-left: 3px }
+              }
+            }
+
+            select { @extend .uk-select }
+
+            textarea { @extend .uk-textarea }
+
+            &_address > span {
+              display: block;
+              margin-bottom: 20px;
+            }
+
+            &_date {
+              input.datepicker { cursor: pointer }
+              img.ui-datepicker-trigger { display: none }
+            }
+
+            .screen-reader-text { display: none }
+          }
+        }
+      }
+    }
+
+    .gform_footer {
+      margin-top: 2rem;
+      text-align: right;
+
+      input[type=submit] {
+        @extend .uk-button;
+        @extend .uk-button-primary;
+      }
+    }
+
+    // Errors
+    &.gform_validation_error {
+      .validation_error {
+        color: $white;
+        background-color: $global-danger-background;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        @include responsive-font-size(16, 13);
+      }
+
+      .gform_body ul li.gfield {
+        &.gfield_error {
+          input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), textarea {
+            border-color: $global-danger-background;
+          }
+        }
+
+        .ginput_container_fileupload > .validation_message { display: none }
+
+        .validation_message {
+          padding: 2px 0 10px;
+          color: $global-danger-background;
+          font-size: 12px;
+
+          &::before {
+            content: "\f102";
+            font-family: "Font Awesome 5 Free";
+            margin-right: 0.4rem;
+            font-style: normal;
+            font-weight: 900;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hide honeypots using the same styles GF uses
+.gform_validation_container, .gform_wrapper .gform_validation_container, body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container, body .gform_wrapper li.gform_validation_container, body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  display: none !important;
+  position: absolute !important;
+  left: -9000px;
+}

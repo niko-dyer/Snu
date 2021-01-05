@@ -1,0 +1,211 @@
+//
+// Global Variables
+//
+
+// Default Colors
+$red: #f23967;
+$magenta: #e0e;
+$purple: #3e59ff;
+$blue: #58b8fd;
+$cyan: #00cee6;
+$teal: #00a395;
+$green: #17c964;
+$lime: #b2dc25;
+$yellow: #ffc107;
+$orange: #ffa72b;
+$rust: #ff5722;
+
+// Default Shades
+$black: #091a28;
+$oil: #132c42;
+$slate: #183752;
+$steel: #526885;
+$smoke: #4b576a;
+$vapor: #b3c9df;
+$ghost: #eceff1;
+$white: #fff;
+$clear: rgba(0,0,0,0);
+
+// Theme Colors
+$primary: $cyan;
+$secondary: $purple;
+$accent: $yellow;
+$highlight: $white;
+
+// Status Colors
+$success: $green;
+$warning: $yellow;
+$error: $red;
+$info: $blue;
+
+
+//
+// General Setup
+//
+
+$admin-body-background: $ghost;
+$admin-border-color: $vapor;
+
+$button-background: $primary;
+$button-background-active: lighten($button-background, 4%);
+$button-color: $highlight;
+$button-color-active: $button-color;
+
+$link-color: $secondary;
+$link-color-active: lighten($link-color, 10%);
+
+
+//
+// Imports
+//
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import 'login';
+@import 'nav';
+@import 'acf';
+
+
+//
+// Misc Styles
+//
+
+// Admin Body Background Color
+body.wp-admin {
+  background: $admin-body-background;
+  font-family: 'Montserrat', sans-serif;
+
+  #wpbody-content {
+    a:not(.button):not(.page-title-action),
+    .button-link {
+      color: $link-color !important;
+      transition: 0.2s;
+
+      &:hover { color: $link-color-active !important; }
+    }
+
+    * {
+      border-color: $vapor;
+      border-radius: 0;
+      color: $slate;
+    }
+
+    .comment-count-approved { color: $white }
+
+    .button,
+    .page-title-action {
+      background: $button-background;
+      border: none;
+      color: $button-color;
+      box-shadow: none;
+      text-shadow: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: 0.2s;
+
+      &:hover {
+        color: $button-color-active;
+        background: $button-background-active;
+        border: none;
+      }
+
+      &.disabled {
+        background: $vapor !important;
+        color: darken($vapor, 15%) !important;
+      }
+    }
+  }
+
+  #screen-meta-links .show-settings {
+    color: $button-color;
+    background: lighten($header-background, 10%);
+    border-radius: 0;
+
+    &:hover {
+      background: $header-background;
+    }
+
+    &::after { color: $white }
+  }
+}
+
+// WooCommerce
+.woocommerce-layout__header {
+  top: 56px !important;
+  border-left: solid 1px $admin-border-color;
+}
+
+// Hide Settings > Media fields
+body.options-media-php #wpbody-content {
+  form { display: none }
+
+  .wrap::after {
+    content: 'The image sizes are set in /wp-content/themes/spark/app/theme/setup.php to define them statically and base the <img> srcset & sizes attributes off of.';
+    display: block;
+    font-size: 16px;
+    max-width: 560px;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    line-height: 1.7;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px #bbb;
+  }
+}
+
+// WYSIWYG Styling
+body#tinymce {
+  p { margin-top: 0 }
+}
+
+// Tutorial Videos
+#tutorial-videos {
+  max-width: 1280px;
+  margin: 0 1.25rem 0 2px;
+
+  @media (max-width: 784px) { margin: 0 0.8rem 0 2px }
+
+  h1 {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 10px 0 16px;
+    padding: 9px 0 4px 0;
+    line-height: 1.3;
+  }
+
+  .content {
+    background: $white;
+    border: solid 1px $admin-border-color;
+    padding: 1.5rem;
+
+    p { margin: 0 0 1rem }
+
+    span.dashicons {
+      font-size: 18px;
+    }
+
+    .responsive-iframe {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 56.25%;
+
+      iframe {
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%
+      }
+    }
+  }
+}
+
+// Xdebug Styling
+.xdebug-var-dump {
+  padding: 1rem 1rem 1rem 180px;
+  background: $white;
+}
+
+.xdebug-error {
+  margin-left: $sidebar-width + 20px;
+}
