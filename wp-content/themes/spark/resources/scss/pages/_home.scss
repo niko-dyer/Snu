@@ -4,6 +4,10 @@ html {
   overflow: hidden;
 }
 
+.uk-navbar-nav > li.uk-active > a {
+  color: #FFD700;
+}
+
 body {
   height: 100vh;
   perspective: 1px;
@@ -285,15 +289,17 @@ main.home {
   overflow: hidden;
 
   .hero-head {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0 0 20px 40px;
+    background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
     color: white;
-    position: fixed;
     margin-bottom: 0;
     font-size: 6em;
     font-weight: 400;
     bottom: 0;
-    left: 5vw;
+    height: 88vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-end;
   }
 }
 
@@ -332,6 +338,106 @@ main.home {
       color: #FFD700;
       font-weight: 600;
     }
+  }
+}
+
+.values-shelf {
+  height: 80vh;
+  background: lightgray;
+  text-align: center;
+
+  h1 {
+    padding: 20px;
+  }
+  .icons {
+    display: flex;
+    justify-content: space-around;
+    img {
+      max-height: 30vh;
+      height: 30vh;
+    }
+    h3 {
+      margin: 20px;
+    }
+    p {
+      margin: 20px;
+    }
+  }
+}
+
+.contact {
+  height: 25vh;
+  text-align: center;
+  h1 {
+    padding: 20px;
+  }
+  a {
+    color: #FFD700;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  }
+  a:hover {
+    color: #FFD700;
+  }
+}
+
+@media(max-width: 650px) {
+  div.banner {
+    width: 80% !important;
+  }
+
+  main.home .content {
+    width: 80% !important;
+    padding: 20px !important;
+  }
+
+  #site-main .hero-head {
+    font-size: 3em !important;
+  }
+
+  .foot-content {
+    flex-direction: column !important;
+    height: unset !important;
+    padding: 20px;
+  }
+
+  .crest-content {
+    flex-direction: column !important;
+
+    .crest-text {
+      width: 75% !important;
+      padding: 0 !important;
+    }
+    img {
+      clip-path: none !important;
+      width: 100% !important;
+    }
+  }
+
+  .hero-head {
+    font-size: 4em !important;
+  }
+
+  .content-chapter {
+    height: 45vh !important;
+    margin-top: 50%;
+  }
+
+  .fifty-fifty-shelf {
+    flex-direction: column;
+    align-items: center;
+    max-height: unset !important;
+  }
+
+  .values-shelf {
+    height: unset !important;
+
+    .icons {
+      flex-direction: column;
+    }
+  }
+
+  .contact-shelf {
+    height: unset !important;
   }
 }
 

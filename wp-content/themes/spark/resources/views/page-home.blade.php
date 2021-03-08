@@ -40,8 +40,10 @@
 <div style="padding-top: 0;" class="regular-wrapper crest">
   <div class="crest-content">
     <div class="crest-text">
-      <h2>Test</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turp</p>
+      <h2>Mission</h2>
+      <p>To develop ethical leaders inspired by the principles of Love, Honor and Truth.
+        To foster the personal growth of each man’s mind, heart and character.
+        To perpetuate lifelong friendships and commitment to the Fraternity.</p>
     </div>
     <img class="crest-img" src="{{$group}}" alt="Sigma Nu crest">
   </div>
